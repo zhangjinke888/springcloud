@@ -17,7 +17,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class SeataOrderMainApp2001
 {
-
     public static void main(String[] args)
     {
         SpringApplication.run(SeataOrderMainApp2001.class, args);

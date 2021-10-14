@@ -3,8 +3,6 @@ package com.keer.springcloud.controller;
 import com.keer.springcloud.loadBalance.LoadBalancer;
 import com.keer.springcloud.entities.CommonResult;
 import com.keer.springcloud.entities.Payment;
-
-import com.netflix.discovery.converters.Auto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -12,18 +10,18 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-
 import java.net.URI;
-import java.net.URL;
 import java.util.List;
+
 
 /**
  * @Auther ker
  * @Date 2021/8/17
  * @ApiNode
  */
-@RestController
+
 @Slf4j
+@RestController
 public class OrderController {
 //    public static final String url = "http://localhost:8001";
     public static final String url = "http://CLOUD-PAYMENT-SERVICE";

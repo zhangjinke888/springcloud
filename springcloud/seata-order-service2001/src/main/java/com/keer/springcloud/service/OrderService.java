@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
  * @data 2021/10/14
  * @description
  */
-@Service
+
 public interface OrderService {
 
     void create(Order order);
