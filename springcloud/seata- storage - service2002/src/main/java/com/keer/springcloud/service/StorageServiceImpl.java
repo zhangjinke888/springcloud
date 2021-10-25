@@ -14,6 +14,7 @@ import javax.annotation.Resource;
  */
 @Service
 public class StorageServiceImpl implements StorageService {
+
     private static final Logger LOGGER = LoggerFactory.getLogger(StorageServiceImpl.class);
 
     @Resource

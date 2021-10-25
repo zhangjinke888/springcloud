@@ -2,6 +2,7 @@ package com.keer.springcloud.controller;
 
 import com.keer.springcloud.domain.CommonResult;
 import com.keer.springcloud.service.StorageService;
+import com.keer.springcloud.service.StorageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class StorageController {
+
     @Autowired
-    private StorageService storageService;
+    private StorageServiceImpl storageService;
 
     /**
      * 扣减库存
