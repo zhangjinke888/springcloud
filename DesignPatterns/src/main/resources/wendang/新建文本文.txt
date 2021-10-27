@@ -1,0 +1,47 @@
+&oN8p8pop6LF
+
+export MAVEN_HOME=/home/development/apache-maven-3.6.3
+export PATH=$MAVEN_HOME/bin:$PATH、
+
+export NODE_HOME=/home/dev/nodejs
+export PATH=$PATH:$NODE_HOME/bin
+export NODE_PATH=$NODE_HOME/lib/node_modules
+
+cd /home/ideaProject/pig-ui/
+npm run dev
+
+
+6155a26cfa7f 
+5103458fe411
+0168c15df7aa
+74f542920772
+
+
+pig-monitor
+
+systemctl start docker
+docker stop pig-codegen
+docker stop pig-monitor
+docker stop pig-sentinel
+docker stop pig-job
+
+cd /home/ideaProject/pig-ui/
+npm run build:docker
+cd docker/
+docker-compose build
+
+##由于用的是root账户权限执行npm，而npm默认是不适用root权限创建内容，因此会出现权限问题而导致失败，
+npm install --production --unsafe-perm=true --allow-root
+
+#docker 所有ip
+ docker inspect -f='{{.Name}} {{.NetworkSettings.IPAddress}} {{.HostConfig.PortBindings}}' $(docker ps -aq)
+/
+docker-allip
+#停用全部运行中的容器:
+docker stop $(docker ps -q)
+#删除全部容器
+docker rm $(docker ps -aq)
+#运行mysql容器
+docker run -p 3306:3306 -itd -e MYSQL_ROOT_PASSWORD=root  pig-mysql
+进入容器  [容器id]
+docker exec -it  /bin/bash   
